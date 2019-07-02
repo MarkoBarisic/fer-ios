@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginInScreenViewController" customModule="iosQuiz" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="Mab-j0-odj" id="uUg-2R-YwF"/>
+                <outlet property="logoImageView" destination="1L9-r4-Ox8" id="xDa-OH-f7r"/>
+                <outlet property="passwordTextField" destination="sYF-t2-BV0" id="FbQ-Rc-rD8"/>
+                <outlet property="usernameTextField" destination="7gU-ge-0FU" id="UaR-dY-wPj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-j0-odj">
+                    <rect key="frame" x="30" y="392" width="315" height="53"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="EAV-Ld-utc"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizLogoImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1L9-r4-Ox8">
+                    <rect key="frame" x="10" y="50" width="355" height="132"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1L9-r4-Ox8" secondAttribute="height" multiplier="355:132" id="1Mi-Zx-EON"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="7bO-HC-55a"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sYF-t2-BV0">
+                    <rect key="frame" x="50" y="312" width="275" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                </textField>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkn-Zh-2vN">
+                    <rect key="frame" x="0.0" y="670" width="375" height="142"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-ge-0FU">
+                    <rect key="frame" x="50" y="232" width="275" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1L9-r4-Ox8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="87n-7v-szm"/>
+                <constraint firstAttribute="trailing" secondItem="sYF-t2-BV0" secondAttribute="trailing" constant="50" id="LRw-d2-TSE"/>
+                <constraint firstItem="Mab-j0-odj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="NHZ-J1-2d0"/>
+                <constraint firstAttribute="trailing" secondItem="1L9-r4-Ox8" secondAttribute="trailing" constant="10" id="Rd9-dm-PGy"/>
+                <constraint firstItem="Mab-j0-odj" firstAttribute="top" secondItem="sYF-t2-BV0" secondAttribute="bottom" constant="50" id="UbY-oY-6Ln"/>
+                <constraint firstItem="1L9-r4-Ox8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="WyS-t8-jFI"/>
+                <constraint firstItem="7gU-ge-0FU" firstAttribute="top" secondItem="1L9-r4-Ox8" secondAttribute="bottom" constant="50" id="Zcj-uM-icM"/>
+                <constraint firstAttribute="trailing" secondItem="Mab-j0-odj" secondAttribute="trailing" constant="30" id="b6x-ng-QUu"/>
+                <constraint firstItem="sYF-t2-BV0" firstAttribute="top" secondItem="7gU-ge-0FU" secondAttribute="bottom" constant="50" id="b9H-sL-bcu"/>
+                <constraint firstItem="sYF-t2-BV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="jtU-Sn-Exc"/>
+                <constraint firstItem="sYF-t2-BV0" firstAttribute="top" secondItem="7gU-ge-0FU" secondAttribute="bottom" constant="50" id="nO8-lJ-Yxd"/>
+                <constraint firstItem="7gU-ge-0FU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="rfL-TH-pUC"/>
+                <constraint firstAttribute="trailing" secondItem="7gU-ge-0FU" secondAttribute="trailing" constant="50" id="rxk-kw-qsu"/>
+            </constraints>
+            <point key="canvasLocation" x="-1231" y="-22"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="quizLogoImage.jpg" width="1166" height="314"/>
+    </resources>
+</document>

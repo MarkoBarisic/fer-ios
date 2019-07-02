@@ -1,0 +1,57 @@
+//
+//  DataController.swift
+//  iosQuiz
+//
+//  Created by Marko Barisic on 23/06/2019.
+//  Copyright © 2019 Marko Barisic. All rights reserved.
+//
+
+import Foundation
+import CoreData
+
+class DataController {
+
+    static let shared = DataController()
+    private init() {}
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Model")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    func fetchQuizzes() -> [Quiz]? {
+        
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        let context = DataController.shared.persistentContainer.viewContext
+        let quizzes = try? context.fetch(request)
+        return quizzes
+    }
+    
+    func searchQuizzes(key: String) -> [Quiz]? {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        if key != "" {
+            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@ || desc CONTAINS[cd] %@", key, key)
+        }
+        let context = DataController.shared.persistentContainer.viewContext
+        let quizzes = try? context.fetch(request)
+        return quizzes
+    }
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+}
